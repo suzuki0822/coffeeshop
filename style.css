@@ -1,0 +1,816 @@
+@charset "UTF-8";
+/*
+Theme Name: coffeeshop
+
+*/
+
+h2 {
+    font-family: '小塚ゴシック Pro', 'Kozuka Gothic Pro', sans-serif;
+    ;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: fixed;
+    z-index: 9999;
+}
+
+.top_text {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    left: 0%;
+    padding: 10px;
+    font-size: 40px;
+    margin: 60px;
+    white-space: nowrap;
+}
+
+
+.main-visual {
+    position: relative;
+}
+
+.main-visual img {
+    width: 100%;
+    height: 100%;
+}
+
+#news {
+    max-width: 1000px;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.news_title {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+#news .news_lists .news_box:first-child {
+    border-top: solid 1px #210000;
+}
+
+#news .news_lists .news_box {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 1.5em 0;
+    border-bottom: solid 1px #210000;
+}
+
+#news .top_link_btn {
+    text-align: center;
+    margin-top: 2.5em;
+}
+
+.top_link_btn a {
+    display: inline-block;
+    min-width: 245px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    border: solid 1px #210000;
+    position: relative;
+}
+
+.bg_red {
+    background-color: #210000;
+}
+
+/* main #news #about #enjoy #atshop #blend #beans {
+    display: block;
+    width: 100%;
+    padding: 100px 0;
+} */
+#about {
+    display: block;
+    width: 100%;
+    padding: 100px 0;
+}
+
+#blend {
+    display: block;
+    width: 100%;
+}
+
+#beans {
+    display: block;
+    width: 100%;
+    padding: 100px 0;
+}
+
+#news {
+    display: block;
+    width: 100%;
+    padding: 100px 0;
+}
+
+#about {
+    display: block;
+    width: 100%;
+    padding: 100px 0;
+}
+
+#about>div {
+    color: #ffffff;
+    text-align: center;
+}
+
+.no_padding {
+    padding: 0;
+}
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about>div>h1 {
+    font-size: 40px;
+}
+
+#athome {
+    width: 50%;
+    margin-right: 0;
+}
+
+#athome>picture>img {
+    width: 100%;
+    height: 100%;
+}
+
+#athome>picture {
+    display: block;
+    height: 100%;
+}
+
+#athome {
+    padding: 0;
+    position: relative;
+}
+
+#athome>div {
+    width: 100%;
+}
+
+#athome>div {
+    position: absolute;
+    top: 0;
+}
+
+#atshop {
+    width: 50%;
+    margin-right: 0;
+    padding: 0;
+}
+
+#atshop>picture>img {
+    width: 100%;
+    height: 100%;
+}
+
+#atshop>picture {
+    display: block;
+    height: 100%;
+}
+
+.picture_box {
+    position: relative;
+}
+
+.picture_text {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    right: 0;
+    padding: 10px;
+    font-size: 30px;
+    margin: 60px;
+}
+
+.picture_box_btn {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    padding: 10px;
+    margin: 60px;
+}
+
+.picture_box_btn_text {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+#blend {
+    position: relative;
+}
+
+.blend_img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+
+.blend_text {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    right: 0;
+    padding: 10px;
+    font-size: 40px;
+    margin: 60px;
+    white-space: nowrap;
+}
+
+.beans_title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    height: 200px;
+    background-color: #210000;
+    padding: 100px;
+}
+
+footer p {
+    text-align: center;
+    color: #fff;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+    /*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 94%;
+    margin: 0 auto;
+}
+
+.slider img {
+    width: 100%;
+    /*スライダー内の画像を横幅100%に*/
+    height: auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+    margin: 0 10px;
+}
+
+
+.slick-prev:before, .slick-next:before {
+    color: #000;
+    /*黒にする*/
+    opacity: 1;
+    /*デフォルトは.75が指定されている*/
+}
+
+.article_box.channel .article_box_img, .article_box.channel .article_box_img img {
+    border-radius: 10px 10px 0 0;
+}
+
+.article_box_container {
+    height: 205px;
+    padding: 10px;
+    background-color: #eee7c2;
+}
+
+.article_box_category {
+    margin-top: 0;
+}
+
+
+.openbtn4 {
+    position: fixed;
+    background: #210000;
+    z-index: 9999;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    right: 0;
+}
+
+/*ボタン内側*/
+.openbtn4 span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 23px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    width: 45%;
+}
+
+
+.openbtn4 span:nth-of-type(1) {
+    top: 15px;
+}
+
+.openbtn4 span:nth-of-type(2) {
+    top: 29px;
+}
+
+.openbtn4 span:nth-of-type(3) {
+    top: 43px;
+}
+
+.openbtn4 span:nth-of-type(3)::after {
+    content: "Menu";
+    /*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top: 7px;
+    left: -4px;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+.openbtn4.active span:nth-of-type(1) {
+    top: 25px;
+    left: 28px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn4.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.openbtn4.active span:nth-of-type(3) {
+    top: 37px;
+    left: 28px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.openbtn4.active span:nth-of-type(3)::after {
+    content: "Close";
+    /*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+    top: 10px;
+    left: 6px;
+}
+
+
+#g-nav {
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    top: -120%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /*ナビの高さ*/
+    background: #4b4343;
+    /*動き*/
+    transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list {
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    /*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li {
+    list-style: none;
+    text-align: center;
+}
+
+#g-nav li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.contact_btn {
+    position: fixed;
+    background: #665454;
+    z-index: 9999;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    right: 80px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.fa-envelope {
+    font-size: 3rem;
+    color: white;
+}
+
+div.contact_btn p {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+#about>div>p {
+    margin: 10px;
+}
+
+#about>div>div>a {
+    color: #fff;
+    border: solid 1px #ffffff;
+    margin-top: 10px;
+}
+
+
+
+
+/* side */
+.wp-block-search__label {
+    display: none;
+}
+
+
+
+.wp-block-buttons {
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+a.wp-block-button__link {
+    background-color: #f7d046;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    padding: 1rem 4rem;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+a.wp-block-button__link:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: #000;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem .75rem;
+}
+
+.wp-block-table tr>td:first-child {
+    border-bottom: 1px solid #f7d046;
+    font-weight: bold;
+}
+
+.wp-block-media-text {
+    margin-bottom: 3rem;
+}
+
+.wp-block-media-text .wp-block-button a {
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #f7d046;
+    border-top: 1px solid #f7d046;
+}
+
+.wp-block-media-text .wp-block-button a:hover {
+    background-color: #f7d046;
+}
+
+ul.wp-block-latest-posts__list.wp-block-latest-posts li {
+    border-bottom: 1px dotted #ddd;
+    padding: .75rem;
+}
+
+ul.wp-block-latest-posts__list.wp-block-latest-posts li:last-child {
+    border-bottom: none;
+}
+
+/* breadcrumb */
+.breadcramb {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin: 10px 0;
+}
+
+.breadcramb a {
+    color: #aaa;
+}
+
+/* next-prev */
+.post-navigation {
+    margin: 3rem 0;
+}
+
+.post-navigation .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-navigation .nav-links .nav-previous {
+    margin-right: 1rem;
+}
+
+.post-navigation .nav-links .nav-next {
+    margin-left: auto;
+}
+
+.post-navigation .nav-links .nav-previous+.nav-next {
+    margin-left: 1rem;
+}
+
+.post-navigation .nav-links .nav-previous a,
+.post-navigation .nav-links .nav-next a {
+    display: block;
+    border: 1px solid #f7d046;
+    position: relative;
+}
+
+.post-navigation .nav-links .nav-previous a:hover,
+.post-navigation .nav-links .nav-next a:hover {
+    background-color: #f7d046;
+    text-decoration: none;
+}
+
+.post-navigation .nav-links .nav-previous a::before,
+.post-navigation .nav-links .nav-next a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    margin-top: -0.15rem;
+    top: 50%;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(45deg);
+}
+
+.post-navigation .nav-links .nav-previous a {
+    padding: 0.5rem 1rem 0.5rem 2rem;
+}
+
+.post-navigation .nav-links .nav-previous a::before {
+    left: 1rem;
+    transform: rotate(-135deg);
+}
+
+.post-navigation .nav-links .nav-next a {
+    padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.post-navigation .nav-links .nav-next a::before {
+    right: 1rem;
+    transform: rotate(45deg);
+}
+
+/* pagination */
+.pagination .nav-links {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.pagination .nav-links .page-numbers {
+    margin: 0 .25rem;
+    border: 1px solid #ddd;
+    padding: .5rem .75rem;
+}
+
+.pagination .nav-links .page-numbers:hover {
+    background-color: #eee;
+    text-decoration: none;
+}
+
+.pagination .nav-links .page-numbers.current {
+    background-color: #f7d046;
+    border: none;
+}
+
+/*Snow Monkey Forms*/
+
+/*フォームの色などの設定*/
+.smf-form .smf-item .smf-text-control__control,
+.smf-form .smf-item .smf-textarea-control__control {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #f3dd91;
+    background-color: rgba(247, 207, 70, 0.1);
+}
+
+/*フォームのhover時の設定*/
+.smf-form .smf-item .smf-text-control__control:hover,
+.smf-form .smf-item .smf-textarea-control__control:hover {
+    border-bottom: 1px solid #f7d046;
+    background-color: rgba(247, 207, 70, 0.2);
+}
+
+/*active時の設定*/
+.smf-form .smf-item .smf-text-control__control:active,
+.smf-form .smf-item .smf-text-control__control:focus,
+.smf-form .smf-item .smf-text-control__control:focus-within,
+.smf-form .smf-item .smf-text-control__control[aria-selected=true],
+.smf-form .smf-item .smf-textarea-control__control:active,
+.smf-form .smf-item .smf-textarea-control__control:focus,
+.smf-form .smf-item .smf-textarea-control__control:focus-within,
+.smf-form .smf-item .smf-textarea-control__control[aria-selected=true] {
+    border-bottom: 1px solid #f7d046;
+}
+
+/*ボタンの設定*/
+.smf-action .smf-button-control__control {
+    background-color: #f7d046;
+    background-image: none;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    padding: 1rem 4rem;
+    border-radius: 8px;
+}
+
+/* 必須項目の文字色を目立たせる */
+.smf-item__description {
+    color: #ff8484;
+}
+
+
+#archive {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.site-aside {
+    width: 240px;
+    padding-left: 20px;
+    margin-left: 60px;
+}
+
+#block-9>ul {
+    list-style: none;
+}
+
+#archive>div>header>h1 {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #eee;
+}
+
+#archive article {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+p.news_category.newsletter>a>span {
+    border: solid 1px #9e9d9d;
+    padding: 3px;
+}
+
+.article_info {
+    display: flex;
+}
+
+.newsletter {
+    margin: 0 30px;
+}
+
+.article_box_title {
+    font-size: 25px;
+}
+
+.article_excerpt {
+    font-size: 18px;
+}
+
+.article_author {
+    margin-left: 10px;
+}
+
+#single {
+    display: flex;
+}
+
+.entry-header img {
+    width: 100%;
+    height: auto
+}
+
+#single-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-bottom: 60px;
+    flex: 1;
+}
+
+.nav-next {
+    margin-right: 300px;
+}
+
+#single .entry-title {
+    padding: 0 0.75rem 0.5rem;
+    border-bottom: 3px solid #eee;
+    margin-top: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+#single .entry-category {
+    margin-bottom: 20px;
+}
+
+.beans_btn {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.wp-block-search__inside-wrapper {
+    margin: 20px 0;
+}
+
+.article_excerpt {
+    margin-top: 10px;
+}
+
+#beans-archive {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-bottom: 60px;
+}
+
+#beans-archive .archive-title {
+    padding: 0 0.75rem 0.5rem;
+    border-bottom: 3px solid #eee;
+}
+
+.wp-block-categories{
+    margin-left: 25px;
+}
+
+#post-51{
+    flex: 1;
+}
+
+.wp-block-snow-monkey-forms-item{
+    margin: 20px 0;
+}
+
+.custom-logo-link img{
+    width: 200px;
+    height: auto;
+}
