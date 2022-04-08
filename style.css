@@ -814,3 +814,7 @@ p.news_category.newsletter>a>span {
     width: 200px;
     height: auto;
 }
+
+#single-beans{
+ flex: 1;
+}
