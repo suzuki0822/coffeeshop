@@ -2,7 +2,6 @@
 get_header();
 ?>
 <main id="single-main" class="single-main">
-
 	<?php
 	if (function_exists('yoast_breadcrumb') && !is_front_page()) {
 	?>

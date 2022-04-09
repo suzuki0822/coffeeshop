@@ -1,13 +1,14 @@
 <?php
 
-function add_stylesheet() {
+function add_stylesheet()
+{
 	wp_enqueue_style(
 		'main', // mainという名前を設定
-		get_template_directory_uri().'/style.css', // パス
+		get_template_directory_uri() . '/style.css', // パス
 		array(), // style.cssより先に読み込むCSSは無いので配列は空
 	);
-  }
-  add_action('wp_enqueue_scripts', 'add_stylesheet');
+}
+add_action('wp_enqueue_scripts', 'add_stylesheet');
 
 /**
  * テーマ初期設定
@@ -15,17 +16,18 @@ function add_stylesheet() {
  * テーマサポートの読み込み
  * カスタムメニューの設定
  */
-function wpro_setup() {
+function wpro_setup()
+{
 
 	// RSSリンクの出力
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	// タイトルタグの出力
-	add_theme_support( 'title-tag' );
+	add_theme_support('title-tag');
 
 	// アイキャッチの利用
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1568, 9999 );
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(1568, 9999);
 
 	// html5形式での出力
 	add_theme_support(
@@ -57,20 +59,20 @@ function wpro_setup() {
 	);
 
 	// テーマカスタマイザーよりウィジェットを設定した際にリロードする
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support('customize-selective-refresh-widgets');
 
 	// ブロックエディター用の基本CSSの読み込み
-	add_theme_support( 'wp-block-styles' );
+	add_theme_support('wp-block-styles');
 
 	// 全幅と幅広への利用
-	add_theme_support( 'align-wide' );
+	add_theme_support('align-wide');
 
 	// 管理画面ブロックエディター用のCSSの読み込み
-	add_theme_support( 'editor-styles' );
+	add_theme_support('editor-styles');
 
 	// 管理画面用の独自CSSの読み込み
 	$editor_stylesheet_path = './assets/css/style-editor.css';
-	add_editor_style( $editor_stylesheet_path );
+	add_editor_style($editor_stylesheet_path);
 
 	// テキスト設定のフォントサイズの設定
 	add_theme_support(
@@ -98,19 +100,19 @@ function wpro_setup() {
 	);
 
 	// レスポンシブに対応した埋め込みのサポート
-	add_theme_support( 'responsive-embeds' );
+	add_theme_support('responsive-embeds');
 
 	// 行間のカスタマイズのサポート
-	add_theme_support( 'custom-line-height' );
+	add_theme_support('custom-line-height');
 
 	// 段落、見出し、グループ、列、メディアおよびテキストブロックのリンクカラー設定のサポート
-	add_theme_support( 'experimental-link-color' );
+	add_theme_support('experimental-link-color');
 
 	// カバーブロックの余白設定のサポート
-	add_theme_support( 'custom-spacing' );
+	add_theme_support('custom-spacing');
 
 	// カバーブロックの高さの単位の設定をサポート
-	add_theme_support( 'custom-units' );
+	add_theme_support('custom-units');
 
 	// カスタムメニューの追加
 	register_nav_menus(
@@ -118,14 +120,14 @@ function wpro_setup() {
 			'primary' => 'メインナビゲーション',
 		)
 	);
-
 }
-add_action( 'after_setup_theme', 'wpro_setup' );
+add_action('after_setup_theme', 'wpro_setup');
 
 /**
  * ウィジェットの追加
  */
-function wpro_widgets_init() {
+function wpro_widgets_init()
+{
 	register_sidebar(
 		array(
 			'name'          => 'サイドバー',
@@ -138,37 +140,38 @@ function wpro_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'wpro_widgets_init' );
+add_action('widgets_init', 'wpro_widgets_init');
 
 /**
- * 投稿詳細にて、「制作事例」という文字列が本文内に含まれている場合、自動でリンクを付与する
  *
  * @param string $content 現在の投稿の本文
  */
-function wpro_replace_showcase_single( $content ) {
-	if ( is_singular( 'post' ) && in_the_loop() && is_main_query() ) {
-		$content = str_replace( 'コーヒー豆', '<a href="/beans/">コーヒー豆</a>', $content );
+function wpro_replace_showcase_single($content)
+{
+	if (is_singular('post') && in_the_loop() && is_main_query()) {
+		$content = str_replace('コーヒー豆', '<a href="/beans/">コーヒー豆</a>', $content);
 	}
 	return $content;
 }
-add_filter( 'the_content', 'wpro_replace_showcase_single', 12 );
+add_filter('the_content', 'wpro_replace_showcase_single', 12);
 
 /**
  * 制作事例のアーカイブページにて、表示する事例の数を全件に変更
  *
  * @param WP_Query $query WP_Query インスタンス
  */
-function wpro_show_all_posts_showcase_archive( $query ) {
-	if ( ! is_admin() && $query->is_post_type_archive( 'beans' ) && $query->is_main_query() ) {
-		$query->set( 'posts_per_page', -1 );
+function wpro_show_all_posts_showcase_archive($query)
+{
+	if (!is_admin() && $query->is_post_type_archive('beans') && $query->is_main_query()) {
+		$query->set('posts_per_page', -1);
 	}
 }
-add_action( 'pre_get_posts', 'wpro_show_all_posts_showcase_archive' );
+add_action('pre_get_posts', 'wpro_show_all_posts_showcase_archive');
 
 /**
  * WordPress のバージョン情報を非表示にする
  */
-remove_action( 'wp_head', 'wp_generator' );
+remove_action('wp_head', 'wp_generator');
 
 /**
  * ショートコード「related_showcase」
@@ -176,7 +179,8 @@ remove_action( 'wp_head', 'wp_generator' );
  * @param array  $atts ショートコードに渡されたパラメータ
  * @param string $content ショートコードに囲われたテキスト（このショートコードでは利用しません）
  */
-function wpro_shortcode_related_showcase( $atts, $content = null ) {
+function wpro_shortcode_related_showcase($atts, $content = null)
+{
 	$return = '';
 	$atts   = shortcode_atts(
 		array(
@@ -188,7 +192,7 @@ function wpro_shortcode_related_showcase( $atts, $content = null ) {
 	);
 
 	// slug の指定がない場合は何も出力しない
-	if ( ! $atts['slug'] ) {
+	if (!$atts['slug']) {
 		return $return;
 	}
 
@@ -199,22 +203,22 @@ function wpro_shortcode_related_showcase( $atts, $content = null ) {
 		'name'           => $atts['slug'],
 		'posts_per_page' => 1,
 	);
-	$related_post_query = new WP_Query( $related_post_args );
+	$related_post_query = new WP_Query($related_post_args);
 
 	// 該当する制作事例がない場合は何も出力しない
-	if ( ! $related_post_query->have_posts() ) {
+	if (!$related_post_query->have_posts()) {
 		return $return;
 	}
 
-	$return .= '<h2>' . esc_html( $atts['title'] ) . '</h2>';
-	while ( $related_post_query->have_posts() ) {
+	$return .= '<h2>' . esc_html($atts['title']) . '</h2>';
+	while ($related_post_query->have_posts()) {
 		$related_post_query->the_post();
 		$return .= '<div class="wp-block-media-text is-stacked-on-mobile">';
-		if ( has_post_thumbnail() ) {
+		if (has_post_thumbnail()) {
 			$return .= '<figure class="wp-block-media-text__media">' . get_the_post_thumbnail() . '</figure>';
 		}
 		$return .= '<div class="wp-block-media-text__content">';
-		$return .= '<h3>' . esc_html( get_the_title() ) . '<h3>' . get_the_excerpt() . '<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link">' . esc_html( $atts['button'] ) . '</a></div></div>';
+		$return .= '<h3>' . esc_html(get_the_title()) . '<h3>' . get_the_excerpt() . '<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link">' . esc_html($atts['button']) . '</a></div></div>';
 		$return .= '</div>';
 		$return .= '</div>';
 	}
@@ -222,22 +226,71 @@ function wpro_shortcode_related_showcase( $atts, $content = null ) {
 
 	return $return;
 }
-add_shortcode( 'related_showcase', 'wpro_shortcode_related_showcase' );
+add_shortcode('related_showcase', 'wpro_shortcode_related_showcase');
+
+
+/////////////////////////////////ショートコード
+add_shortcode('タイトル', function () {
+	return get_the_title();
+});
+
+
+function getPrice()
+{
+	$price = get_post_meta(get_the_id(), '価格', true);
+	return number_format($price);
+}
+add_shortcode('価格', 'getPrice');
+
+function getAmount()
+{
+	$amount = get_post_meta(get_the_id(), '量', true);
+	return $amount;
+}
+add_shortcode('量', 'getAmount');
+
+function getRoast()
+{
+	$roast = get_post_meta(get_the_id(), '煎り方', true);
+	return $roast;
+}
+add_shortcode('煎り方', 'getRoast');
+
+function getBitter()
+{
+	$bitter = get_post_meta(get_the_id(), '苦味', true);
+	return $bitter;
+}
+add_shortcode('苦味', 'getBitter');
+
+function getSourness()
+{
+	$sourness = get_post_meta(get_the_id(), '酸味', true);
+	return $sourness;
+}
+add_shortcode('酸味', 'getSourness');
+
+function getDescription()
+{
+	$description = get_post_meta(get_the_id(), '説明', true);
+	return $description;
+}
+add_shortcode('説明', 'getDescription');
 
 
 
-add_action('init', function(){
-    register_post_type('beans',[
-        'label' => 'コーヒー豆',
-        'public' => true,
-        'menu_icon' =>'dashicons-welcome-write-blog
+add_action('init', function () {
+	register_post_type('beans', [
+		'label' => 'コーヒー豆',
+		'public' => true,
+		'menu_icon' => 'dashicons-welcome-write-blog
         ',
-        'supports' => ['thumbnail','title','editor'] ,
-        'has_archive' => true,
-        'show_in_rest' => true,
-    ]);
-    add_theme_support('post-thumbnails');
-    register_nav_menus([
-        'gloval-nav' => 'グローバルナビゲーション'
-    ]);
+		'supports' => ['thumbnail', 'title', 'editor', 'custom-fields'],
+		'has_archive' => true,
+		'show_in_rest' => true,
+	]);
+	add_theme_support('post-thumbnails');
+	register_nav_menus([
+		'gloval-nav' => 'グローバルナビゲーション'
+	]);
 });

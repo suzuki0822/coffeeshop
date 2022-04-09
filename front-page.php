@@ -38,7 +38,7 @@ get_header();
 
     <section id="about" class="bg_red">
         <div class="container">
-            <h1 class="tt_about">THE COFFEE SHOP</h1>
+            <h1 class="tt_about">ABOUT COFFEE SHOP</h1>
             <p>今までとは違うコーヒーの楽しみを。</p>
             <div class="top_link_btn"><a href="/about/">Coffee Shopについて</a></div>
         </div>
